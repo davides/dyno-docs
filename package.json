@@ -1,0 +1,16 @@
+{
+  "name": "dyno-docs",
+  "version": "1.0.0",
+  "description": "Enhancements to AWS.DynamoDB.DocumentClient",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "desiobu@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "async": "^2.1.4",
+    "aws-sdk": "^2.7.15",
+    "mocha": "^3.2.0"
+  }
+}
