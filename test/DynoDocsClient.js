@@ -59,7 +59,7 @@ describe('DynoDocsClient', function() {
       var item = makeItem('h2', 'r2', 2);
       client.put(item, (err, res) => {
         // trying to put again with an incorrect version should not be allowed
-        item.etag = 'incorrect-etag';
+        item['$$etag'] = 'incorrect-etag';
         client.put(item, (err, res) => {
           if (err) {
             assert.equal(err.code, 'ConditionalCheckFailedException', 'Unexpected error: ' + err);
@@ -75,7 +75,7 @@ describe('DynoDocsClient', function() {
       var item = makeItem('h3', 'r3', 3);
       client.put(item, (err, res) => {
         // it can be overwritten with a wildcard etag
-        item.etag = '*';
+        item['$$etag'] = '*';
         client.put(item, done);
       });
     });
